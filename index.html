@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Figata Centrale</title>
+  <meta name="description" content="Figata Centrale is a calendar-based global events website with filtering by activity type and click-through event details." />
+  <meta property="og:title" content="Figata Centrale" />
+  <meta property="og:description" content="Calendar-based global events site with activity filters and event details." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root,[data-theme="light"] {
+      --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+      --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+      --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+      --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+      --text-2xl: clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
+      --text-3xl: clamp(2.5rem, 1rem + 4vw, 5rem);
+      --text-hero: clamp(3rem, 0.5rem + 7vw, 8rem);
+      --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem; --space-4: 1rem; --space-5: 1.25rem; --space-6: 1.5rem; --space-8: 2rem; --space-10: 2.5rem; --space-12: 3rem; --space-16: 4rem; --space-20: 5rem; --space-24: 6rem;
+      --color-bg: #f6f2ec; --color-surface: #fbf8f3; --color-surface-2: #f1e9df; --color-surface-offset: #ebdfd1; --color-surface-dynamic: #ddcdbd;
+      --color-divider: #d5c6b6; --color-border: #cdbba8; --color-text: #2e241e; --color-text-muted: #6f6257; --color-text-faint: #a8998c; --color-text-inverse: #fbf7f1;
+      --color-primary: #175f63; --color-primary-hover: #12484b; --color-primary-active: #0d3335; --color-primary-highlight: #d6e6e4; --color-secondary: #8a3a22; --color-gold:#b58d3a;
+      --radius-sm: 0.375rem; --radius-md: 0.5rem; --radius-lg: 0.75rem; --radius-xl: 1rem; --radius-full: 9999px;
+      --transition-interactive: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+      --shadow-sm: 0 1px 2px oklch(0.2 0.01 70 / 0.06); --shadow-md: 0 8px 24px oklch(0.2 0.01 70 / 0.10); --shadow-lg: 0 18px 44px oklch(0.2 0.01 70 / 0.14);
+      --content-default: 1180px;
+      --font-display: 'Cormorant Garamond', Georgia, serif; --font-body: 'Work Sans', 'Helvetica Neue', sans-serif;
+    }
+    [data-theme="dark"] {
+      --color-bg: #161412; --color-surface: #1d1a17; --color-surface-2: #25211d; --color-surface-offset: #2c2723; --color-surface-dynamic: #38312b;
+      --color-divider: #3a332d; --color-border: #4a4138; --color-text: #e8ded2; --color-text-muted: #b4a699; --color-text-faint: #87786e; --color-text-inverse: #201915;
+      --color-primary: #5da6ab; --color-primary-hover: #84c0c4; --color-primary-active: #a3d4d6; --color-primary-highlight: #243334; --color-secondary: #d18a69; --color-gold:#d4b474;
+      --shadow-sm: 0 1px 2px oklch(0 0 0 / 0.25); --shadow-md: 0 8px 24px oklch(0 0 0 / 0.34); --shadow-lg: 0 18px 44px oklch(0 0 0 / 0.42);
+    }
+    @media (prefers-color-scheme: dark) { :root:not([data-theme]) { --color-bg: #161412; --color-surface: #1d1a17; --color-surface-2: #25211d; --color-surface-offset: #2c2723; --color-surface-dynamic: #38312b; --color-divider: #3a332d; --color-border: #4a4138; --color-text: #e8ded2; --color-text-muted: #b4a699; --color-text-faint: #87786e; --color-text-inverse: #201915; --color-primary: #5da6ab; --color-primary-hover: #84c0c4; --color-primary-active: #a3d4d6; --color-primary-highlight: #243334; --color-secondary: #d18a69; --color-gold:#d4b474; } }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{-moz-text-size-adjust:none;-webkit-text-size-adjust:none;text-size-adjust:none;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;scroll-behavior:smooth;scroll-padding-top:var(--space-16)}
+    body{min-height:100dvh;line-height:1.6;font-family:var(--font-body);font-size:var(--text-base);color:var(--color-text);background:var(--color-bg)}
+    img,svg{display:block;max-width:100%;height:auto}
+    a,button,input,select{transition:color var(--transition-interactive),background var(--transition-interactive),border-color var(--transition-interactive),box-shadow var(--transition-interactive)}
+    a{color:inherit;text-decoration:none}
+    button{cursor:pointer;background:none;border:none}
+    h1,h2,h3{text-wrap:balance;line-height:1.05}
+    p{text-wrap:pretty;max-width:74ch}
+    :focus-visible{outline:2px solid var(--color-primary);outline-offset:3px;border-radius:var(--radius-sm)}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}
+    .skip-link{position:absolute;left:var(--space-4);top:-3rem;background:var(--color-primary);color:var(--color-text-inverse);padding:var(--space-3) var(--space-4);border-radius:var(--radius-full);z-index:100}
+    .skip-link:focus{top:var(--space-4)}
+    .container{width:min(calc(100% - 2rem),var(--content-default));margin-inline:auto}
+    .site-header{position:sticky;top:0;z-index:60;background:color-mix(in oklab,var(--color-bg) 84%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid color-mix(in oklab,var(--color-text) 10%,transparent)}
+    .header-inner{display:flex;justify-content:space-between;align-items:center;gap:var(--space-4);padding:var(--space-4) 0}
+    .brand{display:flex;align-items:center;gap:var(--space-3);min-height:44px}
+    .brand-mark{width:2.7rem;height:2.7rem;color:var(--color-primary)}
+    .brand-text strong,.brand-text span{display:block;line-height:1}
+    .brand-text{font-size:var(--text-sm);letter-spacing:.12em;text-transform:uppercase}
+    .nav-actions{display:flex;align-items:center;gap:var(--space-3);flex-wrap:wrap}
+    .header-link{font-size:var(--text-sm);color:var(--color-text-muted)}
+    .theme-toggle{display:grid;place-items:center;width:44px;height:44px;border-radius:var(--radius-full);border:1px solid color-mix(in oklab,var(--color-text) 12%,transparent);background:var(--color-surface)}
+    .hero{padding:clamp(var(--space-12),10vw,var(--space-24)) 0 var(--space-10)}
+    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:var(--space-8);align-items:end}
+    .eyebrow{display:inline-flex;align-items:center;gap:var(--space-2);font-size:var(--text-xs);letter-spacing:.22em;text-transform:uppercase;color:var(--color-text-muted);margin-bottom:var(--space-5)}
+    .eyebrow::before{content:"";width:2rem;height:1px;background:var(--color-primary)}
+    .hero h1{font-family:var(--font-display);font-weight:600;font-size:var(--text-hero);max-width:8ch}
+    .hero p{font-size:var(--text-lg);color:var(--color-text-muted);margin-top:var(--space-4)}
+    .hero-panel{background:linear-gradient(180deg,color-mix(in oklab,var(--color-surface) 92%,white),var(--color-surface-2));border:1px solid color-mix(in oklab,var(--color-text) 10%,transparent);border-radius:var(--radius-xl);padding:var(--space-8);box-shadow:var(--shadow-md)}
+    .hero-panel h2{font-family:var(--font-display);font-size:var(--text-2xl);margin-bottom:var(--space-3)}
+    .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-4);margin-top:var(--space-6)}
+    .hero-stat{padding:var(--space-4);border-radius:var(--radius-lg);background:var(--color-surface);border:1px solid color-mix(in oklab,var(--color-text) 8%,transparent)}
+    .hero-stat strong{display:block;font-size:var(--text-lg)}
+    .hero-stat span{font-size:var(--text-xs);text-transform:uppercase;letter-spacing:.14em;color:var(--color-text-muted)}
+    .section{padding:var(--space-10) 0}
+    .controls{display:grid;gap:var(--space-5);margin-bottom:var(--space-8)}
+    .controls-top{display:flex;justify-content:space-between;align-items:end;gap:var(--space-4);flex-wrap:wrap}
+    .controls h2{font-family:var(--font-display);font-size:var(--text-3xl);font-weight:600;max-width:10ch}
+    .controls p{color:var(--color-text-muted)}
+    .filters{display:flex;gap:var(--space-3);flex-wrap:wrap}
+    .chip{min-height:44px;padding:0.75rem 1rem;border-radius:var(--radius-full);border:1px solid color-mix(in oklab,var(--color-text) 11%,transparent);background:var(--color-surface);font-size:var(--text-sm);font-weight:600;color:var(--color-text-muted)}
+    .chip[aria-pressed="true"]{background:var(--color-primary);color:var(--color-text-inverse);border-color:var(--color-primary)}
+    .calendar-shell{display:grid;grid-template-columns:290px 1fr;gap:var(--space-6);align-items:start}
+    .sidebar,.calendar-panel{background:var(--color-surface);border:1px solid color-mix(in oklab,var(--color-text) 10%,transparent);border-radius:var(--radius-xl);box-shadow:var(--shadow-sm)}
+    .sidebar{padding:var(--space-6);position:sticky;top:5.7rem}
+    .sidebar-group + .sidebar-group{margin-top:var(--space-6);padding-top:var(--space-6);border-top:1px solid var(--color-divider)}
+    .sidebar h3{font-size:var(--text-sm);text-transform:uppercase;letter-spacing:.16em;color:var(--color-text-muted);margin-bottom:var(--space-3)}
+    .select{width:100%;min-height:48px;border-radius:var(--radius-lg);border:1px solid color-mix(in oklab,var(--color-text) 12%,transparent);padding:0 var(--space-4);background:var(--color-bg);color:var(--color-text)}
+    .legend{display:grid;gap:var(--space-3)}
+    .legend-row{display:flex;align-items:center;gap:var(--space-3);font-size:var(--text-sm);color:var(--color-text-muted)}
+    .swatch{width:12px;height:12px;border-radius:999px}
+    .calendar-panel{padding:var(--space-6)}
+    .month-head{display:flex;justify-content:space-between;align-items:center;gap:var(--space-4);margin-bottom:var(--space-5);flex-wrap:wrap}
+    .month-head h3{font-family:var(--font-display);font-size:var(--text-2xl)}
+    .month-meta{font-size:var(--text-sm);color:var(--color-text-muted)}
+    .weekdays,.calendar-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:var(--space-3)}
+    .weekdays span{font-size:var(--text-xs);letter-spacing:.16em;text-transform:uppercase;color:var(--color-text-muted);padding:0 var(--space-2)}
+    .day{min-height:148px;border-radius:var(--radius-lg);background:var(--color-bg);border:1px solid color-mix(in oklab,var(--color-text) 8%,transparent);padding:var(--space-3);display:flex;flex-direction:column;gap:var(--space-3)}
+    .day.is-outside{opacity:.45}
+    .day-number{font-size:var(--text-sm);font-weight:600;color:var(--color-text-muted)}
+    .day-events{display:grid;gap:var(--space-2);margin-top:auto}
+    .event-pill{width:100%;text-align:left;padding:0.55rem 0.7rem;border-radius:0.85rem;background:var(--color-surface);border:1px solid transparent;box-shadow:var(--shadow-sm);font-size:0.83rem;line-height:1.25}
+    .event-pill:hover{transform:translateY(-1px);box-shadow:var(--shadow-md)}
+    .event-pill .event-type{display:block;font-size:0.68rem;letter-spacing:.12em;text-transform:uppercase;opacity:.8;margin-bottom:0.18rem}
+    .event-pill.biking{background:color-mix(in oklab,var(--color-primary) 15%,var(--color-surface));border-color:color-mix(in oklab,var(--color-primary) 26%,transparent)}
+    .event-pill.kayaking{background:color-mix(in oklab,var(--color-gold) 18%,var(--color-surface));border-color:color-mix(in oklab,var(--color-gold) 28%,transparent)}
+    .event-pill.sailing{background:color-mix(in oklab,var(--color-secondary) 14%,var(--color-surface));border-color:color-mix(in oklab,var(--color-secondary) 22%,transparent)}
+    .event-pill.mixed{background:color-mix(in oklab,var(--color-text) 6%,var(--color-surface));border-color:color-mix(in oklab,var(--color-text) 16%,transparent)}
+    .list-view{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-4);margin-top:var(--space-6)}
+    .list-card{padding:var(--space-5);border-radius:var(--radius-lg);background:var(--color-bg);border:1px solid color-mix(in oklab,var(--color-text) 8%,transparent)}
+    .list-card h4{font-size:var(--text-lg);margin-bottom:var(--space-2)}
+    .meta{display:flex;gap:var(--space-3);flex-wrap:wrap;font-size:var(--text-xs);text-transform:uppercase;letter-spacing:.12em;color:var(--color-text-muted);margin-bottom:var(--space-3)}
+    .list-card p{font-size:var(--text-sm);color:var(--color-text-muted)}
+    .modal{position:fixed;inset:0;background:color-mix(in oklab,var(--color-text) 35%,transparent);display:none;place-items:center;padding:var(--space-4);z-index:80}
+    .modal.is-open{display:grid}
+    .modal-card{width:min(100%,760px);max-height:90dvh;overflow:auto;background:var(--color-surface);border-radius:var(--radius-xl);border:1px solid color-mix(in oklab,var(--color-text) 10%,transparent);box-shadow:var(--shadow-lg);padding:var(--space-8);position:relative}
+    .modal-close{position:absolute;top:var(--space-4);right:var(--space-4);display:grid;place-items:center;width:44px;height:44px;border-radius:var(--radius-full);background:var(--color-bg);border:1px solid color-mix(in oklab,var(--color-text) 10%,transparent)}
+    .modal-card h3{font-family:var(--font-display);font-size:var(--text-2xl);margin-bottom:var(--space-3);padding-right:3rem}
+    .modal-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:var(--space-6);margin-top:var(--space-5)}
+    .detail-box{padding:var(--space-5);border-radius:var(--radius-lg);background:var(--color-bg);border:1px solid color-mix(in oklab,var(--color-text) 8%,transparent)}
+    .detail-box h4{font-size:var(--text-sm);letter-spacing:.14em;text-transform:uppercase;color:var(--color-text-muted);margin-bottom:var(--space-2)}
+    .detail-box ul{list-style:none;display:grid;gap:var(--space-2)}
+    .detail-box li{font-size:var(--text-sm)}
+    .footer{padding:var(--space-10) 0 var(--space-16);color:var(--color-text-muted)}
+    .footer-inner{display:flex;justify-content:space-between;gap:var(--space-4);flex-wrap:wrap;border-top:1px solid color-mix(in oklab,var(--color-text) 10%,transparent);padding-top:var(--space-6)}
+    .reveal{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease}
+    .reveal.is-visible{opacity:1;transform:none}
+    @media (max-width: 1100px){ .calendar-shell{grid-template-columns:1fr} .sidebar{position:static} }
+    @media (max-width: 920px){ .hero-grid,.modal-grid,.list-view{grid-template-columns:1fr} .hero-stats{grid-template-columns:1fr 1fr 1fr} .day{min-height:128px} }
+    @media (max-width: 760px){ .header-inner{flex-direction:column;align-items:flex-start} .weekdays,.calendar-grid{gap:var(--space-2)} .day{min-height:108px;padding:var(--space-2)} .event-pill{padding:0.45rem 0.55rem;font-size:0.74rem} .hero h1{max-width:10ch} }
+    @media (max-width: 560px){ .hero-stats{grid-template-columns:1fr} .controls-top{align-items:flex-start} .filters{display:grid;grid-template-columns:1fr 1fr} .weekdays span{font-size:0.62rem} }
+    @media (prefers-reduced-motion: reduce){ *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important} .reveal{opacity:1;transform:none} }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Figata Centrale home">
+        <svg class="brand-mark" viewBox="0 0 64 64" fill="none" role="img" aria-label="Figata Centrale logo">
+          <circle cx="32" cy="32" r="25" stroke="currentColor" stroke-width="2.5"></circle>
+          <path d="M32 14C27.5 21 24 25.8 24 32c0 5.3 3.4 9.8 8 11.4 4.6-1.6 8-6.1 8-11.4 0-6.2-3.5-11-8-18Z" fill="currentColor"></path>
+          <path d="M20 48c6-3.8 18-3.8 24 0" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"></path>
+        </svg>
+        <span class="brand-text"><strong>Figata</strong><span>Centrale</span></span>
+      </a>
+      <div class="nav-actions">
+        <a class="header-link" href="#calendar">Calendar</a>
+        <a class="header-link" href="#highlights">Highlights</a>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <div class="eyebrow">Global activity calendar</div>
+          <h1>Figata Centrale</h1>
+          <p>A curated calendar of private global trips with fast filtering for biking, sea kayaking, sailing, and mixed outdoor experiences.</p>
+        </div>
+        <aside class="hero-panel reveal" aria-label="Calendar summary">
+          <h2>Find the right season, then click into the trip.</h2>
+          <p>Browse by month, filter by activity type, and open any event for private itinerary notes, timing, and member-only planning details.</p>
+          <div class="hero-stats">
+            <div class="hero-stat"><strong id="stat-events">12</strong><span>Events</span></div>
+            <div class="hero-stat"><strong id="stat-types">4</strong><span>Activity types</span></div>
+            <div class="hero-stat"><strong id="stat-regions">10</strong><span>Regions</span></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="calendar">
+      <div class="container">
+        <div class="controls reveal">
+          <div class="controls-top">
+            <div>
+              <h2>Calendar and filters</h2>
+              <p>The default view shows private custom events; filter the page to isolate the activity you want.</p>
+            </div>
+            <div class="filters" role="group" aria-label="Activity filters">
+              <button class="chip" data-filter="all" aria-pressed="true">All</button>
+              <button class="chip" data-filter="biking" aria-pressed="false">Biking</button>
+              <button class="chip" data-filter="kayaking" aria-pressed="false">Sea kayaking</button>
+              <button class="chip" data-filter="sailing" aria-pressed="false">Sailing</button>
+              <button class="chip" data-filter="mixed" aria-pressed="false">Mixed</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="calendar-shell">
+          <aside class="sidebar reveal">
+            <div class="sidebar-group">
+              <h3>Month</h3>
+              <label class="sr-only" for="month-select">Choose month</label>
+              <select id="month-select" class="select"></select>
+            </div>
+            <div class="sidebar-group">
+              <h3>Legend</h3>
+              <div class="legend">
+                <div class="legend-row"><span class="swatch" style="background:color-mix(in oklab,var(--color-primary) 70%,white)"></span>Biking</div>
+                <div class="legend-row"><span class="swatch" style="background:color-mix(in oklab,var(--color-gold) 78%,white)"></span>Sea kayaking</div>
+                <div class="legend-row"><span class="swatch" style="background:color-mix(in oklab,var(--color-secondary) 72%,white)"></span>Sailing</div>
+                <div class="legend-row"><span class="swatch" style="background:color-mix(in oklab,var(--color-text) 30%,white)"></span>Mixed</div>
+              </div>
+            </div>
+            <div class="sidebar-group" id="highlights">
+              <h3>Use case</h3>
+              <p style="font-size:var(--text-sm);color:var(--color-text-muted);">This structure works for destination research, expedition planning, private hosted trips, or a members-only activity board.</p>
+            </div>
+          </aside>
+
+          <div class="calendar-panel reveal">
+            <div class="month-head">
+              <div>
+                <h3 id="month-title">September 2026</h3>
+                <p class="month-meta" id="month-meta">Private custom event set for invitation-only trips and planning blocks.</p>
+              </div>
+            </div>
+            <div class="weekdays" aria-hidden="true">
+              <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+            </div>
+            <div class="calendar-grid" id="calendar-grid"></div>
+            <div class="list-view" id="list-view"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>Figata Centrale — calendar concept website.</p>
+      <p>Interactive filters, private event details, and a shareable single-file build.</p>
+    </div>
+  </footer>
+
+  <div class="modal" id="event-modal" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close" type="button" id="modal-close" aria-label="Close event details">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+      <div id="modal-content"></div>
+    </div>
+  </div>
+
+  <script>
+    const events = [
+      { id:'andes-climbing-block', title:'Andes Climbing Block', type:'biking', location:'Mendoza, Argentina', region:'South America', month:'2026-01', day:11, endDay:18, summary:'Private riding week built around high-volume climbing, heat adaptation, and long café-paced recovery days.', details:'A private bike-focused week for experienced riders who want sustained climbing, clean road surfaces, and a compact base. Designed as an invitation-only training block with optional support vehicle, route files, and ride captains.', tags:['Private road camp','Climbing focus','Support optional'], link:'#' },
+      { id:'caribbean-passage-lab', title:'Caribbean Passage Lab', type:'sailing', location:'St. Martin to St. Barths and Nevis', region:'Caribbean', month:'2026-02', day:6, endDay:13, summary:'Private sailing week centered on tradewind passages, anchorage selection, and evening route review.', details:'An invitation-only sailing week for small crews who prefer real passage days to marina hopping. The format assumes competent sailors, route planning discipline, and a bias toward time under sail.', tags:['Private flotilla','Performance cruising','Warm water'], link:'#' },
+      { id:'tasman-coast-lines', title:'Tasman Coast Lines', type:'kayaking', location:'Tasman Bay, New Zealand', region:'Oceania', month:'2026-03', day:9, endDay:15, summary:'Private sea kayak gathering with daily coastal paddles, weather windows, and recovery-focused pacing.', details:'Built for paddlers who value route quality over crowd energy. The week can be run as guided, self-supported, or mixed, with daily distances set by conditions rather than a public event format.', tags:['Private paddle week','Weather-based routing','Coastal camps'], link:'#' },
+      { id:'mallorca-spring-base', title:'Mallorca Spring Base', type:'biking', location:'Sóller, Mallorca, Spain', region:'Europe', month:'2026-04', day:12, endDay:20, summary:'Private endurance cycling block using a single mountain base and curated route days.', details:'A focused road camp for riders who want long climbs, smooth logistics, and enough flexibility to mix hard days with scenic coastal recovery rides. Suitable for small groups or a solo-plus-support format.', tags:['Private camp','Road riding','Single-base logistics'], link:'#' },
+      { id:'anglesey-tides-session', title:'Anglesey Tides Session', type:'kayaking', location:'Anglesey, Wales', region:'Europe', month:'2026-05', day:8, endDay:13, summary:'Private sea kayak week for tidal planning, crossings, and skills progression in moving water.', details:'This is designed as a private skills-and-distance week rather than a symposium. The emphasis is on timing, route choice, and paddling in consequential but manageable conditions.', tags:['Private skills block','Tidal water','Small cohort'], link:'#' },
+      { id:'adriatic-twin-sport', title:'Adriatic Twin Sport Week', type:'mixed', location:'Kotor Bay, Montenegro', region:'Europe', month:'2026-06', day:14, endDay:21, summary:'Private dual-sport week combining coastal road riding with calm-water sea kayaking.', details:'Created for travelers who want one destination to support both strong cycling days and relaxed paddling sessions. The format works best with a villa base, shared logistics, and flexible day sequencing.', tags:['Private mixed trip','Bike and paddle','Villa base'], link:'#' },
+      { id:'bc-inside-passage-days', title:'BC Inside Passage Days', type:'kayaking', location:'Desolation Sound, British Columbia, Canada', region:'North America', month:'2026-07', day:7, endDay:14, summary:'Private paddling week with route choices tuned to currents, wind, and comfortable daily distances.', details:'This custom week is aimed at fit paddlers who want meaningful mileage without rushing the camps or anchorages. Daily plans can be shaped around protected crossings, swimming stops, and optional lay days.', tags:['Private expedition','Warm inlet water','Distance pacing'], link:'#' },
+      { id:'dolomites-private-pass-week', title:'Dolomites Private Pass Week', type:'biking', location:'Corvara, Italy', region:'Europe', month:'2026-08', day:23, endDay:30, summary:'Invitation-only road week through major Dolomite passes with one recovery day and one weather-flex day.', details:'A high-end private ride week built for serious climbers who want route quality, disciplined pacing, and the ability to scale rides by group strength. Best for small groups that appreciate a quiet, well-run structure.', tags:['Private climbing camp','Road cycling','Small group'], link:'#' },
+      { id:'aegean-shoulder-season', title:'Aegean Shoulder Season Circuit', type:'sailing', location:'Cyclades, Greece', region:'Europe', month:'2026-09', day:10, endDay:18, summary:'Private sailing circuit planned for active crews who want shoulder-season wind and lower harbor pressure.', details:'An invitation-only route through the Cyclades emphasizing good passages, selective harbor nights, and clear weather decision-making. Works for bareboat, skippered, or owner-led formats.', tags:['Private sailing week','Shoulder season','Passage emphasis'], link:'#' },
+      { id:'crete-bike-paddle-residency', title:'Crete Bike + Paddle Residency', type:'mixed', location:'Chania, Crete, Greece', region:'Europe', month:'2026-10', day:5, endDay:19, summary:'Private two-week residency with alternating climbing rides and sea kayak exploration.', details:'Designed as a slower, more immersive format than a normal event. Guests can stay for one or two weeks, with routes and paddle outings scaled by weather, fitness, and appetite for volume.', tags:['Private residency','Road and sea','Flexible duration'], link:'#' },
+      { id:'caribbean-sailing-october', title:'Caribbean Sailing', type:'sailing', location:'Caribbean', region:'Caribbean', month:'2026-10', day:23, endDay:31, summary:'Private 10-day Caribbean sailing trip with easy logistics, warm water, and a relaxed social onboard format.', details:'An invitation-style Caribbean sailing trip scheduled for October 23 to November 1, 2026. The trip is designed to be easy, requires no sailing skills, and emphasizes snorkeling, beaches, tropical weather, and a nautical camping style of cuisine and onboard living.', tags:['Easy','10 days','$1,500 plus airfare'], difficulty:'Easy', cost:'$1,500 plus airfare', duration:'10 days', skills:'None', space:'Low to moderate', other:'Cuisine is nautical camping, snorkeling, beaches, tropical weather', link:'#' },
+      { id:'tenerife-winter-vertical', title:'Tenerife Winter Vertical', type:'biking', location:'Tenerife, Spain', region:'Europe', month:'2026-12', day:6, endDay:14, summary:'Private winter cycling block focused on long ascents, consistent weather, and high training density.', details:'A private road-riding week for athletes who want reliable winter climbing without race-event noise. The week can run self-supported or with light logistics around lodging, nutrition, and route files.', tags:['Private winter camp','Road cycling','Volcanic climbs'], link:'#' }
+    ]
+    const modal = document.getElementById('event-modal');
+    const modalContent = document.getElementById('modal-content');
+    const modalClose = document.getElementById('modal-close');
+    const monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+    const months = [...new Set(events.map(e => e.month))].sort();
+    let currentFilter = 'all';
+    let currentMonth = months[0];
+    let previousFocus = null;
+
+    function setupMonths(){
+      months.forEach(month => {
+        const [year, mon] = month.split('-');
+        const option = document.createElement('option');
+        option.value = month;
+        option.textContent = `${monthNames[Number(mon)-1]} ${year}`;
+        monthSelect.appendChild(option);
+      });
+      monthSelect.value = currentMonth;
+    }
+
+    function filteredEvents(){
+      return events.filter(event => (currentFilter === 'all' || event.type === currentFilter) && event.month === currentMonth);
+    }
+
+    function renderCalendar(){
+      const [year, month] = currentMonth.split('-').map(Number);
+      const firstDay = new Date(year, month - 1, 1);
+      const daysInMonth = new Date(year, month, 0).getDate();
+      const leading = firstDay.getDay();
+      const visibleEvents = filteredEvents();
+      monthTitle.textContent = `${monthNames[month - 1]} ${year}`;
+      monthMeta.textContent = `${visibleEvents.length} event${visibleEvents.length === 1 ? '' : 's'} shown${currentFilter === 'all' ? '' : ` for ${currentFilter}`}.`;
+      calendarGrid.innerHTML = '';
+      listView.innerHTML = '';
+
+      for(let i = 0; i < leading; i++){
+        const blank = document.createElement('div');
+        blank.className = 'day is-outside';
+        calendarGrid.appendChild(blank);
+      }
+
+      for(let day = 1; day <= daysInMonth; day++){
+        const dayCell = document.createElement('div');
+        dayCell.className = 'day';
+        const num = document.createElement('div');
+        num.className = 'day-number';
+        num.textContent = day;
+        dayCell.appendChild(num);
+
+        const dayEvents = document.createElement('div');
+        dayEvents.className = 'day-events';
+        visibleEvents.filter(event => day >= event.day && day <= event.endDay).forEach(event => {
+          const btn = document.createElement('button');
+          btn.className = `event-pill ${event.type}`;
+          btn.type = 'button';
+          btn.innerHTML = `<span class="event-type">${labelForType(event.type)}</span>${event.title}`;
+          btn.addEventListener('click', () => openModal(event, btn));
+          dayEvents.appendChild(btn);
+        });
+        dayCell.appendChild(dayEvents);
+        calendarGrid.appendChild(dayCell);
+      }
+
+      visibleEvents.forEach(event => {
+        const card = document.createElement('article');
+        card.className = 'list-card';
+        card.innerHTML = `
+          <div class="meta"><span>${labelForType(event.type)}</span><span>${formatRange(event)}</span><span>${event.region}</span></div>
+          <h4>${event.title}</h4>
+          <p style="margin-bottom:var(--space-3);">${event.location}</p>
+          <p>${event.summary}</p>
+          <div style="margin-top:var(--space-4);"><button class="chip" type="button" aria-pressed="false">Open details</button></div>
+        `;
+        card.querySelector('button').addEventListener('click', (e)=>openModal(event, e.currentTarget));
+        listView.appendChild(card);
+      });
+    }
+
+    function formatRange(event){
+      return event.day === event.endDay ? `${event.day}` : `${event.day}\u2013${event.endDay}`;
+    }
+
+    function labelForType(type){
+      return ({biking:'Biking', kayaking:'Sea kayaking', sailing:'Sailing', mixed:'Mixed'})[type] || type;
+    }
+
+    function setFilter(value){
+      currentFilter = value;
+      chips.forEach(chip => chip.setAttribute('aria-pressed', chip.dataset.filter === value ? 'true' : 'false'));
+      renderCalendar();
+    }
+
+    function openModal(event, trigger){
+      previousFocus = trigger;
+      modalContent.innerHTML = `
+        <div class="meta"><span>${labelForType(event.type)}</span><span>${formatRange(event)} ${monthNames[Number(event.month.split('-')[1]) - 1]}</span><span>${event.region}</span></div>
+        <h3 id="modal-title">${event.title}</h3>
+        <p>${event.details}</p>
+        <div class="modal-grid">
+          <div class="detail-box">
+            <h4>Trip details</h4>
+            <ul>
+              <li><strong>Destination:</strong> ${event.location}</li>
+              <li><strong>Window:</strong> ${monthNames[Number(event.month.split('-')[1]) - 1]} ${event.day}${event.endDay !== event.day ? `–${event.endDay}` : ''}</li>
+              <li><strong>Activity:</strong> ${labelForType(event.type)}</li>
+              <li><strong>Difficulty:</strong> ${event.difficulty || 'Custom'}</li>
+              <li><strong>Cost:</strong> ${event.cost || 'Custom pricing'}</li>
+              <li><strong>Duration:</strong> ${event.duration || 'Flexible'}</li>
+            </ul>
+          </div>
+          <div class="detail-box">
+            <h4>Guest fit</h4>
+            <ul>
+              <li><strong>Skills needed:</strong> ${event.skills || 'Varies by trip'}</li>
+              <li><strong>Personal space:</strong> ${event.space || 'Varies by setup'}</li>
+              <li><strong>Other:</strong> ${event.other || 'See trip notes'}</li>
+            </ul>
+          </div>
+        </div>
+        <div class="detail-box" style="margin-top:var(--space-5);">
+          <h4>Focus</h4>
+          <ul>${event.tags.map(tag => `<li>${tag}</li>`).join('')}</ul>
+        </div>
+        <div style="margin-top:var(--space-6);display:flex;gap:var(--space-3);flex-wrap:wrap;">
+          <button class="chip" type="button" style="display:inline-flex;align-items:center;justify-content:center;" disabled aria-disabled="true">Planning note placeholder</button>
+          <button class="chip" type="button" id="modal-dismiss">Close</button>
+        </div>
+      `;
+      modal.classList.add('is-open');
+      modal.setAttribute('aria-hidden','false');
+      document.body.style.overflow = 'hidden';
+      document.getElementById('modal-dismiss').addEventListener('click', closeModal);
+      modalClose.focus();
+    }
+
+    function closeModal(){
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden','true');
+      document.body.style.overflow = '';
+      if(previousFocus) previousFocus.focus();
+    }
+
+    function initTheme(){
+      const toggle = document.querySelector('[data-theme-toggle]');
+      const root = document.documentElement;
+      let theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      root.setAttribute('data-theme', theme);
+      const icon = (mode) => mode === 'dark'
+        ? '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+        : '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+      toggle.innerHTML = icon(theme === 'dark' ? 'light' : 'dark');
+      toggle.setAttribute('aria-label', 'Switch to ' + (theme === 'dark' ? 'light' : 'dark') + ' mode');
+      toggle.addEventListener('click', () => {
+        theme = theme === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', theme);
+        toggle.innerHTML = icon(theme === 'dark' ? 'light' : 'dark');
+        toggle.setAttribute('aria-label', 'Switch to ' + (theme === 'dark' ? 'light' : 'dark') + ' mode');
+      });
+    }
+
+    function initReveal(){
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if(entry.isIntersecting){
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.14 });
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    }
+
+    chips.forEach(chip => chip.addEventListener('click', () => setFilter(chip.dataset.filter)));
+    monthSelect.addEventListener('change', (e) => { currentMonth = e.target.value; renderCalendar(); });
+    modal.addEventListener('click', (e) => { if(e.target === modal) closeModal(); });
+    modalClose.addEventListener('click', closeModal);
+    document.addEventListener('keydown', (e) => { if(e.key === 'Escape' && modal.classList.contains('is-open')) closeModal(); });
+
+    setupMonths();
+    renderCalendar();
+    initTheme();
+    initReveal();
+  </script>
+</body>
+</html>
