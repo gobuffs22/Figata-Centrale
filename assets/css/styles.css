@@ -357,6 +357,8 @@ main { max-width: 1140px; margin: 0 auto; padding: 0 1.5rem 4rem; }
 }
 .chip__label { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-soft); font-weight: 700; }
 .chip__value { font-weight: 700; font-family: "Rubik", sans-serif; color: var(--forest-deep); }
+.chip__value a { text-underline-offset: 2px; }
+.chip__value a:hover { text-decoration: underline; }
 
 .trip-section { margin-top: 2.25rem; }
 .trip-section h2 { font-size: 1.35rem; margin-bottom: 0.8rem; }

@@ -155,7 +155,7 @@ const TRIPS = [
     summary: "Ten days sailing a Sun Odyssey 519 through the Leewards — easy pace, warm water.",
     tags: ["sailing", "international", "low intensity"],
     stats: {
-      Boat: "Sun Odyssey 519",
+      Boat: { text: "Sun Odyssey 519 (2018)", url: "https://www.jeanneau.com/boats/sailboat/2-sun-odyssey/43-sun-odyssey-519" },
       Intensity: "Low",
       Cost: "~$1,500",
       Duration: "10 days"

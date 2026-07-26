@@ -76,10 +76,17 @@ function paragraphsToHtml(text) {
     .join("\n");
 }
 
+function statValueHtml(v) {
+  if (v && typeof v === "object" && v.url) {
+    return `<a href="${escapeHtml(v.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(v.text)}</a>`;
+  }
+  return escapeHtml(v);
+}
+
 function statChipsHtml(stats) {
   if (!stats) return "";
   return Object.entries(stats)
-    .map(([k, v]) => `<div class="chip"><span class="chip__label">${escapeHtml(k)}</span><span class="chip__value">${escapeHtml(v)}</span></div>`)
+    .map(([k, v]) => `<div class="chip"><span class="chip__label">${escapeHtml(k)}</span><span class="chip__value">${statValueHtml(v)}</span></div>`)
     .join("");
 }
 
