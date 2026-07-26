@@ -144,5 +144,30 @@ const TRIPS = [
     ],
     report:
       "The permit lottery finally came through for us on the third try, and it did not disappoint. Chamberlain's Ranch is a weird way to start a canyon trip — you're walking through cow pasture for the first hour wondering if you got the directions wrong — but it opens up fast.\n\nThe water was running colder than forecast and we were very glad for the drysuit rentals from the outfitter in Springdale. Regular gear would have been miserable by hour three.\n\nCamp at Big Spring was the highlight: a wall of ferns and moss with water literally pouring out of solid rock, glowing green in the evening light. Worth the whole trip on its own.\n\nWall Street the next morning, the narrowest and deepest section, lived up to the hype completely — walls a thousand feet up and twenty feet apart, light barely making it down to the water. We came out at Temple of Sinawava soaked, cold, grinning, and immediately started planning the bottom-up day hike for next time."
+  },
+  {
+    slug: "caribbean-sailing-2026",
+    title: "Leeward Islands Sailing Passage",
+    location: "St. Martin to Nevis, St. Barths & Barbuda, Caribbean",
+    startDate: "2026-10-22",
+    endDate: "2026-11-01",
+    cover: "photos/caribbean-sailing-2026/cover.svg",
+    summary: "Ten days sailing a Sun Odyssey 519 through the Leewards — easy pace, warm water.",
+    tags: ["sailing", "international", "low intensity"],
+    stats: {
+      Boat: "Sun Odyssey 519",
+      Intensity: "Low",
+      Cost: "~$1,500",
+      Duration: "10 days"
+    },
+    photos: [
+      "photos/caribbean-sailing-2026/cover.svg"
+    ],
+    itinerary: [
+      { day: "1–2", title: "St. Martin", description: "Provision and shakedown sail out of St. Martin." },
+      { day: "3–5", title: "St. Martin → Nevis", description: "Passage south to Nevis, easy anchorages and relaxed pace." },
+      { day: "6–7", title: "Nevis → St. Barths", description: "Short hop up to St. Barths, beach time and low-key days." },
+      { day: "8–10", title: "St. Barths → Barbuda", description: "Final leg out to Barbuda before heading back in." }
+    ]
   }
 ];
