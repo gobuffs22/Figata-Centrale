@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Waypoints — Calendar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="brand"><span class="brand__mark">🧭</span> Waypoints</div>
+  <nav class="nav">
+    <a class="nav__link" data-page="home" href="index.html">Adventures</a>
+    <a class="nav__link is-active" data-page="calendar" href="calendar.html">Calendar</a>
+  </nav>
+</header>
+
+<main>
+  <div class="cal-header">
+    <div class="cal-nav">
+      <button class="btn btn--ghost" id="cal-prev">&larr;</button>
+      <button class="btn btn--ghost" id="cal-today">Today</button>
+      <button class="btn btn--ghost" id="cal-next">&rarr;</button>
+    </div>
+    <h2 id="cal-title">&nbsp;</h2>
+    <div></div>
+  </div>
+
+  <div class="cal-layout">
+    <div>
+      <div class="cal-weekdays">
+        <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
+      </div>
+      <div class="cal-grid" id="cal-grid"></div>
+    </div>
+    <div>
+      <h3 style="margin-top:0">This month</h3>
+      <div class="legend" id="cal-legend"></div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">Trips with fixed dates show here automatically. Bucket-list ideas (no dates) live on the <a href="index.html">Adventures</a> page.</footer>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/utils.js"></script>
+<script src="assets/js/calendar.js"></script>
+</body>
+</html>

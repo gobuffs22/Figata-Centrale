@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+<defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#c4522b"/><stop offset="100%" stop-color="#e8a06a"/>
+</linearGradient></defs>
+<rect width="800" height="600" fill="url(#sky)"/>
+<polygon points="120,600 200,120 280,600" fill="#a8471f"/>
+<polygon points="320,600 400,60 480,600" fill="#8f3a1a"/>
+<polygon points="500,600 580,140 660,600" fill="#a8471f"/>
+<rect x="270" y="0" width="260" height="600" fill="#5c8a9e" opacity="0.35"/>
+<text x="400" y="580" font-family="sans-serif" font-size="16" fill="#fff3e0dd" text-anchor="middle">The Narrows — placeholder photo</text>
+</svg>

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Waypoints — Adventures</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="brand"><span class="brand__mark">🧭</span> Waypoints</div>
+  <nav class="nav">
+    <a class="nav__link is-active" data-page="home" href="index.html">Adventures</a>
+    <a class="nav__link" data-page="calendar" href="calendar.html">Calendar</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <span class="eyebrow">Adventure log</span>
+  <h1>Every trip, in one place.</h1>
+  <p>Plans, packing lists, photos, and the stories that came out of them.</p>
+  <div class="stat-row">
+    <div class="stat"><span class="stat__num" id="stat-total">0</span><span class="stat__label">Total trips</span></div>
+    <div class="stat"><span class="stat__num" id="stat-upcoming">0</span><span class="stat__label">Upcoming</span></div>
+    <div class="stat"><span class="stat__num" id="stat-past">0</span><span class="stat__label">Completed</span></div>
+  </div>
+</section>
+
+<main>
+  <div class="section">
+    <div class="section__head">
+      <h2>Upcoming adventures</h2>
+      <span>What's next</span>
+    </div>
+    <div class="grid" id="upcoming-grid"></div>
+  </div>
+
+  <div class="section">
+    <div class="section__head">
+      <h2>Trip reports</h2>
+      <span>Where we've been</span>
+    </div>
+    <div class="grid" id="past-grid"></div>
+  </div>
+
+  <div class="section">
+    <div class="section__head">
+      <h2>Bucket list</h2>
+      <span>Someday</span>
+    </div>
+    <div class="grid" id="ideas-grid"></div>
+  </div>
+</main>
+
+<footer class="site-footer">Built with Waypoints · edit <code>assets/js/data.js</code> to add a trip.</footer>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/utils.js"></script>
+<script src="assets/js/home.js"></script>
+</body>
+</html>

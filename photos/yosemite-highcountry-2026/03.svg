@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+<defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#5f8fae"/><stop offset="100%" stop-color="#c9d9c2"/>
+</linearGradient></defs>
+<rect width="800" height="600" fill="url(#sky)"/>
+<polygon points="0,400 150,180 300,390 460,160 640,380 800,260 800,600 0,600" fill="#6f7c72"/>
+<polygon points="0,470 250,320 470,460 800,350 800,600 0,600" fill="#3b473e"/>
+<rect x="330" y="470" width="140" height="90" fill="#264238" opacity="0.7"/>
+<text x="400" y="580" font-family="sans-serif" font-size="16" fill="#ffffffdd" text-anchor="middle">Vogelsang Pass — placeholder photo</text>
+</svg>

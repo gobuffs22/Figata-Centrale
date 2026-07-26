@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+<defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#8fae5a"/><stop offset="100%" stop-color="#cfe0a0"/>
+</linearGradient></defs>
+<rect width="800" height="600" fill="url(#sky)"/>
+<polygon points="100,600 220,80 340,600" fill="#a8471f"/>
+<polygon points="380,600 480,40 580,600" fill="#8f3a1a"/>
+<rect x="300" y="380" width="200" height="220" fill="#3f6b5a" opacity="0.5"/>
+<text x="400" y="580" font-family="sans-serif" font-size="16" fill="#eafbe2dd" text-anchor="middle">Big Spring — placeholder photo</text>
+</svg>

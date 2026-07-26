@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+<defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#8fb996"/><stop offset="100%" stop-color="#e7ecd8"/>
+</linearGradient></defs>
+<rect width="800" height="600" fill="url(#sky)"/>
+<polygon points="0,420 220,250 400,410 600,230 800,400 800,600 0,600" fill="#7d8a72"/>
+<polygon points="0,480 300,370 550,490 800,400 800,600 0,600" fill="#465440"/>
+<text x="400" y="580" font-family="sans-serif" font-size="16" fill="#26362acc" text-anchor="middle">Rafferty Creek trail out — placeholder photo</text>
+</svg>

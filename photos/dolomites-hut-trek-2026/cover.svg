@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+<defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#f6b28e"/><stop offset="100%" stop-color="#fbe3c8"/>
+</linearGradient></defs>
+<rect width="800" height="600" fill="url(#sky)"/>
+<polygon points="0,430 130,180 260,420 380,150 520,410 660,200 800,400 800,600 0,600" fill="#d9b8a3"/>
+<polygon points="0,480 300,330 500,470 800,350 800,600 0,600" fill="#8f6d5c"/>
+<text x="400" y="580" font-family="sans-serif" font-size="16" fill="#3d2b20cc" text-anchor="middle">Dolomites Alta Via 1 — placeholder photo</text>
+</svg>
