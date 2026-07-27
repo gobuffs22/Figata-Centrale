@@ -131,7 +131,8 @@ const TRIPS = [
       { day: 8, title: "Very early departure to St. Barths." },
       { day: 9, title: "Explore St. Barths." },
       { day: 10, title: "St. Barths, afternoon sail to Tintamarre." },
-      { day: 11, title: "Return boat (1000), fly home." }
+      { day: 11, title: "TBD" },
+      { day: 12, title: "Return boat (1000), fly home." }
     ]
   }
 ];
