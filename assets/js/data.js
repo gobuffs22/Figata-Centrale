@@ -115,7 +115,12 @@ const TRIPS = [
     photos: [
       "photos/caribbean-sailing-2026/sail%202021%203%20pano.jpg",
       "photos/caribbean-sailing-2026/sail%202021%202.jpg",
-      "photos/caribbean-sailing-2026/sail%202021%201.jpg"
+      "photos/caribbean-sailing-2026/sail%202021%201.jpg",
+      "photos/caribbean-sailing-2026/DSCF0900.jpg",
+      "photos/caribbean-sailing-2026/IMG_3673.jpg",
+      "photos/caribbean-sailing-2026/IMG_7609.jpg",
+      "photos/caribbean-sailing-2026/IMG_7898.jpg",
+      "photos/caribbean-sailing-2026/PXL_20240529_104655005.jpg"
     ],
     videos: [
       "photos/caribbean-sailing-2026/sail-video-1.mp4"
