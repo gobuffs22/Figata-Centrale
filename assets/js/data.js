@@ -22,6 +22,8 @@
  *   itinerary    array of { day, title, description } — the plan (used for
  *                upcoming/idea trips, but also fine to keep on past trips)
  *   photos       array of image paths for the gallery
+ *   videos       array of video file paths (mp4 etc.), shown as a playable
+ *                video section on the trip page
  *   highlights   array of short bullet strings (great for past trips)
  *   report       the trip report — write it as plain text, separate
  *                paragraphs with a blank line. Only shows once the trip is past.
@@ -162,6 +164,9 @@ const TRIPS = [
     },
     photos: [
       "photos/caribbean-sailing-2026/cover.svg"
+    ],
+    videos: [
+      "photos/caribbean-sailing-2026/sail-video-1.mp4"
     ],
     itinerary: [
       { day: "1–2", title: "St. Martin", description: "Provision and shakedown sail out of St. Martin." },

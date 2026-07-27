@@ -392,6 +392,14 @@ main { max-width: 1140px; margin: 0 auto; padding: 0 1.5rem 4rem; }
 }
 .gallery__thumb:hover { transform: scale(1.03); }
 
+.video-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; }
+.video-list video {
+  width: 100%;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: #000;
+}
+
 .trip-report p { color: var(--ink); }
 
 .back-link { margin-top: 2.75rem; }

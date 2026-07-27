@@ -67,6 +67,13 @@ document.addEventListener("DOMContentLoaded", () => {
             ${trip.photos.map((p, i) => `<button class="gallery__thumb" style="background-image:url('${p}')" data-index="${i}" aria-label="Open photo ${i + 1}"></button>`).join("")}
           </div>
         </div>` : ""}
+      ${trip.videos && trip.videos.length ? `
+        <div class="trip-section">
+          <h2>Videos</h2>
+          <div class="video-list">
+            ${trip.videos.map((v) => `<video controls preload="metadata" src="${v}"></video>`).join("")}
+          </div>
+        </div>` : ""}
       ${trip.report ? `
         <div class="trip-section trip-report">
           <h2>Trip Report</h2>
