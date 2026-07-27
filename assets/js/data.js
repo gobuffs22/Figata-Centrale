@@ -36,8 +36,18 @@ const TRIPS = [
     location: "Victoria & Mayne Island, British Columbia, Canada",
     startDate: "2026-05-11",
     endDate: "2026-05-16",
+    cover: "photos/victoria-mayne-island-2026/PXL_20260514_155055641.MP.jpg",
     summary: "Six days cycling around Victoria and out to Mayne Island in the Gulf Islands.",
-    tags: ["cycling", "international"]
+    tags: ["cycling", "international"],
+    photos: [
+      "photos/victoria-mayne-island-2026/PXL_20260514_155055641.MP.jpg",
+      "photos/victoria-mayne-island-2026/PXL_20260516_160101664.MP.jpg",
+      "photos/victoria-mayne-island-2026/PXL_20260514_225720989.MP.jpg",
+      "photos/victoria-mayne-island-2026/PXL_20260516_003254013.jpg",
+      "photos/victoria-mayne-island-2026/PXL_20260514_024238656.MP.jpg",
+      "photos/victoria-mayne-island-2026/PXL_20260512_051232068.MP.jpg",
+      "photos/victoria-mayne-island-2026/PXL_20260513_051221726.MP.jpg"
+    ]
   },
   {
     slug: "dolomites-hut-trek-2026",
