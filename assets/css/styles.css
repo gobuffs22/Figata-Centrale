@@ -124,6 +124,13 @@ main { max-width: 1140px; margin: 0 auto; padding: 0 1.5rem 4rem; }
   color: #ffffff;
 }
 .hero p { color: #e8e6d8; font-size: 1.15rem; max-width: 34rem; margin: 0 auto; }
+.hero p.brand-meaning {
+  font-size: 0.9rem;
+  color: #c9c6b6;
+  margin-top: 0.6rem;
+  scroll-margin-top: 5rem;
+}
+.brand-meaning em { color: var(--lime); font-style: normal; font-weight: 600; }
 
 .stat-row {
   display: flex;
