@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <span class="itinerary__day">Day ${escapeHtml(String(d.day))}</span>
                 <div>
                   <strong>${escapeHtml(d.title)}</strong>
-                  <p>${escapeHtml(d.description)}</p>
+                  ${d.description ? `<p>${escapeHtml(d.description)}</p>` : ""}
                 </div>
               </li>`).join("")}
           </ol>

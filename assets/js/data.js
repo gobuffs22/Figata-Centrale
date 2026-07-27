@@ -121,10 +121,17 @@ const TRIPS = [
       "photos/caribbean-sailing-2026/sail-video-1.mp4"
     ],
     itinerary: [
-      { day: "1–2", title: "St. Martin", description: "Provision and shakedown sail out of St. Martin." },
-      { day: "3–5", title: "St. Martin → Nevis", description: "Passage south to Nevis, easy anchorages and relaxed pace." },
-      { day: "6–7", title: "Nevis → St. Barths", description: "Short hop up to St. Barths, beach time and low-key days." },
-      { day: "8–10", title: "St. Barths → Barbuda", description: "Final leg out to Barbuda before heading back in." }
+      { day: 1, title: "Arrive SXM", description: "Plane spotting and provisioning." },
+      { day: 2, title: "Finish provisioning, board boat late afternoon." },
+      { day: 3, title: "After technical briefing, sail to St. Barths." },
+      { day: 4, title: "Early departure for Nevis." },
+      { day: 5, title: "Explore Nevis." },
+      { day: 6, title: "Very early departure to Barbuda." },
+      { day: 7, title: "Explore Barbuda." },
+      { day: 8, title: "Very early departure to St. Barths." },
+      { day: 9, title: "Explore St. Barths." },
+      { day: 10, title: "St. Barths, afternoon sail to Tintamarre." },
+      { day: 11, title: "Return boat (1000), fly home." }
     ]
   }
 ];
