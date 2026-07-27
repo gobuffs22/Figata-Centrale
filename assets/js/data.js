@@ -24,6 +24,8 @@
  *   photos       array of image paths for the gallery
  *   videos       array of video file paths (mp4 etc.), shown as a playable
  *                video section on the trip page
+ *   maps         array of { label, image } — route/map images shown in their
+ *                own Maps section, labeled (e.g. by date)
  *   highlights   array of short bullet strings (great for past trips)
  *   report       the trip report — write it as plain text, separate
  *                paragraphs with a blank line. Only shows once the trip is past.
@@ -46,7 +48,19 @@ const TRIPS = [
       "photos/victoria-mayne-island-2026/PXL_20260516_003254013.jpg",
       "photos/victoria-mayne-island-2026/PXL_20260514_024238656.MP.jpg",
       "photos/victoria-mayne-island-2026/PXL_20260512_051232068.MP.jpg",
-      "photos/victoria-mayne-island-2026/PXL_20260513_051221726.MP.jpg"
+      "photos/victoria-mayne-island-2026/PXL_20260513_051221726.MP.jpg",
+      "photos/victoria-mayne-island-2026/1.jpg",
+      "photos/victoria-mayne-island-2026/2.jpg",
+      "photos/victoria-mayne-island-2026/3.jpg",
+      "photos/victoria-mayne-island-2026/4.jpg",
+      "photos/victoria-mayne-island-2026/5.jpg"
+    ],
+    maps: [
+      { label: "May 11", image: "photos/victoria-mayne-island-2026/May%2011.png" },
+      { label: "May 12", image: "photos/victoria-mayne-island-2026/May%2012.png" },
+      { label: "May 13", image: "photos/victoria-mayne-island-2026/May%2013.png" },
+      { label: "May 14", image: "photos/victoria-mayne-island-2026/May%2014.png" },
+      { label: "May 15", image: "photos/victoria-mayne-island-2026/May%2015.png" }
     ]
   },
   {

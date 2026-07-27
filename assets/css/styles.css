@@ -399,6 +399,26 @@ main { max-width: 1140px; margin: 0 auto; padding: 0 1.5rem 4rem; }
 }
 .gallery__thumb:hover { transform: scale(1.03); }
 
+.map-item { display: flex; flex-direction: column; gap: 0.4rem; }
+.map__thumb {
+  aspect-ratio: 4 / 3;
+  background-size: cover;
+  background-position: center;
+  background-color: var(--cream-deep);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.15s ease;
+}
+.map__thumb:hover { transform: scale(1.03); }
+.map-item__label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--ink-soft);
+  text-align: center;
+}
+
 .video-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; }
 .video-list video {
   width: 100%;

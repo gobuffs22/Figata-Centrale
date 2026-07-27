@@ -67,6 +67,17 @@ document.addEventListener("DOMContentLoaded", () => {
             ${trip.photos.map((p, i) => `<button class="gallery__thumb" style="background-image:url('${p}')" data-index="${i}" aria-label="Open photo ${i + 1}"></button>`).join("")}
           </div>
         </div>` : ""}
+      ${trip.maps && trip.maps.length ? `
+        <div class="trip-section">
+          <h2>Maps</h2>
+          <div class="gallery">
+            ${trip.maps.map((m, i) => `
+              <div class="map-item">
+                <button class="map__thumb" style="background-image:url('${m.image}')" data-index="${i}" aria-label="Open map ${escapeHtml(m.label)}"></button>
+                <span class="map-item__label">${escapeHtml(m.label)}</span>
+              </div>`).join("")}
+          </div>
+        </div>` : ""}
       ${trip.videos && trip.videos.length ? `
         <div class="trip-section">
           <h2>Videos</h2>
@@ -86,11 +97,14 @@ document.addEventListener("DOMContentLoaded", () => {
   $("#trip-root").innerHTML = html;
 
   if (trip.photos && trip.photos.length) {
-    setupLightbox(trip.photos);
+    setupLightbox(trip.photos, ".gallery__thumb");
+  }
+  if (trip.maps && trip.maps.length) {
+    setupLightbox(trip.maps.map((m) => m.image), ".map__thumb");
   }
 });
 
-function setupLightbox(photos) {
+function setupLightbox(images, thumbSelector) {
   const overlay = document.createElement("div");
   overlay.className = "lightbox";
   overlay.innerHTML = `
@@ -105,8 +119,8 @@ function setupLightbox(photos) {
   const img = overlay.querySelector(".lightbox__img");
 
   function show(i) {
-    current = (i + photos.length) % photos.length;
-    img.src = photos[current];
+    current = (i + images.length) % images.length;
+    img.src = images[current];
   }
   function open(i) {
     show(i);
@@ -116,7 +130,7 @@ function setupLightbox(photos) {
     overlay.classList.remove("is-open");
   }
 
-  $all(".gallery__thumb").forEach((btn) => {
+  $all(thumbSelector).forEach((btn) => {
     btn.addEventListener("click", () => open(Number(btn.dataset.index)));
   });
   overlay.querySelector(".lightbox__close").addEventListener("click", close);
