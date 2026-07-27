@@ -1,4 +1,4 @@
-# Waypoints
+# Figata Centrale
 
 A static site for organizing adventures: a planning calendar, detailed per-trip
 pages, photo galleries, and trip reports from past trips. No build step, no

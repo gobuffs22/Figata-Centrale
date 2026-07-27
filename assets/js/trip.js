@@ -10,11 +10,11 @@ document.addEventListener("DOMContentLoaded", () => {
         <p>We couldn't find an adventure with that link.</p>
         <a class="btn" href="index.html">&larr; Back home</a>
       </div>`;
-    document.title = "Trip not found · Waypoints";
+    document.title = "Trip not found · Figata Centrale";
     return;
   }
 
-  document.title = `${trip.title} · Waypoints`;
+  document.title = `${trip.title} · Figata Centrale`;
   const status = tripStatus(trip);
   const cover = trip.cover || (trip.photos && trip.photos[0]) || "";
 
