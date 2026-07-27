@@ -104,13 +104,13 @@ const TRIPS = [
     startDate: "2026-10-22",
     endDate: "2026-11-02",
     cover: "photos/caribbean-sailing-2026/sail%202021%203%20pano.jpg",
-    summary: "Ten days sailing a Sun Odyssey 519 through the Leewards — easy pace, warm water.",
+    summary: "Twelve days sailing a Sun Odyssey 519 through the Leewards — easy pace, warm water.",
     tags: ["sailing", "international", "low intensity"],
     stats: {
       Boat: { text: "Sun Odyssey 519 (2018)", url: "https://www.jeanneau.com/boats/sailboat/2-sun-odyssey/43-sun-odyssey-519" },
       Intensity: "Low",
       Cost: "~$1,500",
-      Duration: "10 days"
+      Duration: "12 days"
     },
     photos: [
       "photos/caribbean-sailing-2026/sail%202021%203%20pano.jpg",
