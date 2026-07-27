@@ -153,7 +153,7 @@ const TRIPS = [
     location: "St. Martin to Nevis, St. Barths & Barbuda, Caribbean",
     startDate: "2026-10-22",
     endDate: "2026-11-01",
-    cover: "photos/caribbean-sailing-2026/cover.svg",
+    cover: "photos/caribbean-sailing-2026/sail%202021%203%20pano.jpg",
     summary: "Ten days sailing a Sun Odyssey 519 through the Leewards — easy pace, warm water.",
     tags: ["sailing", "international", "low intensity"],
     stats: {
@@ -163,7 +163,9 @@ const TRIPS = [
       Duration: "10 days"
     },
     photos: [
-      "photos/caribbean-sailing-2026/cover.svg"
+      "photos/caribbean-sailing-2026/sail%202021%203%20pano.jpg",
+      "photos/caribbean-sailing-2026/sail%202021%202.jpg",
+      "photos/caribbean-sailing-2026/sail%202021%201.jpg"
     ],
     videos: [
       "photos/caribbean-sailing-2026/sail-video-1.mp4"
